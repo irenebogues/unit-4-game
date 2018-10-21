@@ -1,10 +1,10 @@
 
-    
+// Global Variables
 
-
+var gameruleOne,
     
 //Star Wars RPG Game characters
- characters: [{
+ characters = [{
     //Darth Vader
     name: "Darth Vader",
     health: 200,
@@ -43,65 +43,22 @@
     attackPower: 15,
     counterPower: 20,
     imageUrl: '../images/yoda.png'
-}],
+},];
 
-    //This ensures that the nested characters can work as the main player or an enemy
-    
-    //Game Rule Instruction Number 1: Player will select the StarWars characters by clicking on enemy's photo
-
-    function gameruleOne () {
-        attackPower = 0;
-        defenderId = "";
-        attackerId = "";
-        attackerHp = 0;
-        defenderHp = 0;
-        enemyCount = characters.length -1;
+function gameruleOne () {
+    attackPower = 0;
+    playersId = "";
+    enemyplayersId = "";
+    enemyplayersHp = 0;
+    defenderHp = 0;
+    enemyCount = characters.length -1;
 
 
-        $("#mainbattlefield").empty();
-        $("#gameplayers").empty();
-        $("#enemyplayers").empty();
-        $("#defender").empty();
+var playerId = $("gameplayers").find(".characters");
+var enemyplayersId = $("enemyplayers").find(".characters");
+var enemyplayersHp = $("defenders").find (".characters");
 
-        
-    //Loop to create characters
-        for (var i = 0; i < characters.length; i++) {
-            //create dynamic divs
-            var div = $('<div>').addClass("gameplayers").attr("id",i);
-            //append new div to id=characters 
-            $("mainbattlefield").append(div);
-        //inside the new div append a <p> with the character name
-            div.append($("<img>").attr("src", "assets/images/" + character [1]["imgUrl"]));
-            div.append($("<p>").text (characters[i]["name"]));
-            div.append($("<p>").html("Health Points: <span>" + character[i]["health"]));
-            div.append($("<p>").html("Attack Power: <span>" + character[i]["attackPower"]));
-            div.append($("<p>").html("Counter Attack: <span>" + character[i]["counterPower"]));		
-		}
-		attachOnClick(); //attach onclick event to characters
-    };
 
-    //
-        function attachOnClick () {
-            $(".characters").on("click", function(){
-                var currentCharacter = $(this);
-                if (attackerId === ""){
-                    attackerId = currentCharacter.attr("id");
-                    attackerHp = characters[attackerId].health;
-                    currentCharacter.addClass("enemyplayer");
-                    currentCharacter.off("click");
-                    $("gameplayer").append(currentCharacter);
-                } else if(defenderId === ""){
-                    defenderId = currentCharacter.attr("id");
-                    defenderHp = characters [defenderId].health;
-                    currentCharacter.addClass("defender");
-                    currentCharacter.off("click");
-                    $("#defender").append(currentCharacter);
-                }
-            });
-                
-        }
-        
-		
-				
+}
 
     
