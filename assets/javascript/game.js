@@ -1,21 +1,19 @@
 //Function to run to invoke document.
 
 // Main Star Wars RPG Game Variables 
+    
+
+// Main Star Wars RPG Game Variables 
 //Counts number of wins and looses of players
 
-var starWars = {
-    numberWin: 0,
-    numberLose: 0,
-
-//Star Wars RPG Game Characthers
-characthers: [{
+    
+//Star Wars RPG Game characters
+ characters: [{
     //Darth Vader
     name: "Darth Vader",
     health: 200,
     attackPower: 10,
     counterPower: 12,
-    player: false,
-    enemy: false,
     imageUrl: '../images/darthvader.png'
 },
 
@@ -24,8 +22,6 @@ characthers: [{
     health: 180,
     attackPower: 8,
     counterPower: 10,
-    player: false,
-    enemy: false,
     imageUrl: '../images/darthmaul.png'
 },
 
@@ -34,8 +30,6 @@ characthers: [{
     health: 200,
     attackPower: 11,
     counterPower: 13,
-    player: false,
-    enemy: false,
     imageUrl: '../images/obiwan.png'
 },
 
@@ -44,8 +38,6 @@ characthers: [{
     health: 210,
     attackPower: 12,
     counterPower: 14,
-    player: false,
-    enemy: false,
     imageUrl: '../images/lukeskywalker.png'
 },
 
@@ -54,45 +46,85 @@ characthers: [{
     health: 250,
     attackPower: 15,
     counterPower: 20,
-    player: false,
-    enemy: false,
     imageUrl: '../images/yoda.png'
 }],
 
-    //This ensures that the nested characthers can work as the main player or an enemy
-    player: false,
-    enemy: false,
+    //This ensures that the nested characters can work as the main player or an enemy
+    
+    //Game Rule Instruction Number 1: Player will select the StarWars characters by clicking on enemy's photo
 
-    //Game Rule Instruction Number 1: Player will select the StarWars characthers by clicking on enemy's photo
+    function gameruleOne () {
+        attackPower = 0;
+        defenderId = "";
+        attackerId = "";
+        attackerHp = 0;
+        defenderHp = 0;
+        enemyCount = characters.length -1;
 
-    gameruleOne: function () {
-        $("#mainbattlefield").text();
-        //console.log(starWars);
-    },
+
+        $("#mainbattlefield").empty();
+        $("#gameplayers").empty();
+        $("#enemyplayers").empty();
+        $("#defender").empty();
+
+        
+    //Loop to create characters
+        for (var i = 0; i < characters.length; i++) {
+            //create dynamic divs
+            var div = $('<div>').addClass("gameplayers").attr("id",i);
+            //append new div to id=characters
+            $("mainbattlefield").append(div);
+        //inside the new div append a <p> with the character name
+            div.append($("<img>").attr("src", "assets/images/" + character [1]["imgUrl"]));
+            div.append($("<p>").text (characters[i]["name"]));
+            div.append($("<p>").html("Health Points: <span>" + character[i]["health"]));
+            div.append($("<p>").html("Attack Power: <span>" + character[i]["attackPower"]));
+            div.append($("<p>").html("Counter Attack: <span>" + character[i]["counterPower"]));		
+		}
+		attachOnClick(); //attach onclick event to characters
+    };
+
+    //
+        function attachOnClick () {
+            $(".characters").on("click", function(){
+                var currentCharacter = $(this);
+                if (attackerId === ""){
+                    attackerId = currentCharacter.attr("id");
+                    attackerHp = characters[attackerId].health;
+                    currentCharacter.addClass("enemyplayer");
+                    currentCharacter.off("click");
+                    $("gameplayer").append(currentCharacter);
+                } else if(defenderId === ""){
+                    defenderId = currentCharacter.attr("id");
+                    defenderHp = characters [defenderId].health;
+                    currentCharacter.addClass("defender");
+                    currentCharacter.off("click");
+                    $("#defender").append(currentCharacter);
+                }
+            });
+                
+        }
+        
+		
+
+			
+				
+				
 
     //All Game Rules/Functions HERE
 
-
-    
     //Game Restart Function Generates Gets and Sets the rest of the Game Rules Functions
     //Game Restart Function also serves as the main game function
-    //Functions for Players Choosing their Characther
+
+
+
+    
+
     //Functions for Pictures to Move to Enemy Player Div
     //Battle Functions Here
     //Functions for Defenders
     //Attack Functions
     //Defender Functions
     //Win-Lose Functions
+            
     
-
-
-
-
-};
-
-    
-
-
-
-
-
