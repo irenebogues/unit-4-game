@@ -23,25 +23,31 @@ body {
     text-align: center;
   }
 
-  
-  .img {
-    height: 100px;
-    width: 150px;
-    border-radius: 10px;
-  }
+  #battlefield {
+    width: 100%;
 
+  }
+  
   #characters {
+    height: 180px;
+    width: 130px;
     display:inline-block;
     border-color: silver 2px solid ;
     border-width: 2px;
     display: block;
     cursor: pointer;
+    height: 250px;
+    width: 150px;
     font-size: 20px;
     color: black;
     
 
   }
+
   .characters-imageUrl {
+    height: 200px;
+    width: 180px;
+    display: inline-block;
     padding-right: 16px;
     padding-left: 16px;
     margin-top: 3px;
@@ -49,24 +55,25 @@ body {
 
 
   }
+
   #gameplayer {
-    height: 190 px;
-    width: 160px;
+    height: 200 px;
+    width: 180px;
     padding: 30px;
   }
   
   #enemyplayer {
-    height: 190 px;
-    width: 160px;
+    height: 200 px;
+    width: 180px;
     padding: 30px;
   }
   
   #defender {
-    height: 190 px;
-    width: 160px;
+    height: 200 px;
+    width: 180px;
     text-align: center;
     padding: 30px;
-  display: hidden;
+    display: hidden;
   }
 
   

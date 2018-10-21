@@ -47,16 +47,36 @@ var gameruleOne,
 
 function gameruleOne () {
     attackPower = 0;
-    playersId = "";
-    enemyplayersId = "";
     enemyplayersHp = 0;
     defenderHp = 0;
+    playersId = "";
+    enemyplayersId = "";
+    defendersId = "";
     enemyCount = characters.length -1;
 
 
-var playerId = $("gameplayers").find(".characters");
-var enemyplayersId = $("enemyplayers").find(".characters");
-var enemyplayersHp = $("defenders").find (".characters");
+var playersId = $("#gameplayers").find("characters-imageUrl").attr("data-id");
+playersId.removeAttr("id");
+playersId.removeAttr("data-selected");
+playersId.attr("id", "#characters" + playersId);
+$("#battlefield").append(playersId);
+
+
+var enemyplayersId = $("#enemyplayers").find("characters-imageUrl").attr("data-id");
+enemyplayersId.removeAttr("id");
+enemyplayersId.removeAttr("data-selected");
+enemyplayersId.attr("id", "#characters" + enemyplayersId);
+$("#enemyplayer").append(enemyplayersId);
+
+
+var defendersId = $("defenders").find("characters-imageUrl").attr("data-id");
+defendersId.removeAttr("id");
+defendersId.removeAttr("data-selected");
+defendersId.attr("id", "#characters" + defendersId);
+$("#defender").append(defendersId);
+
+
+
 
 
 }
