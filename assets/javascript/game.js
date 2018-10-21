@@ -1,10 +1,12 @@
 
 // Global Variables
+/* function starWars () {
 
-var gameruleOne,
-    
+    */
+
+ 
 //Star Wars RPG Game characters
- characters = [{
+ var characters = [{
     //Darth Vader
     name: "Darth Vader",
     health: 200,
@@ -49,24 +51,29 @@ function gameruleOne () {
     attackPower = 0;
     enemyplayersHp = 0;
     defenderHp = 0;
-    playersId = "";
-    enemyplayersId = "";
-    defendersId = "";
-    enemyCount = characters.length -1;
+    playersId = characters;
+    enemyplayersId = characters;
+    defendersId = characters;
 
+    $("#gameplayers").empty();
+    $("#enemyplayers").empty();
+    $("#defender").empty();
 
+for (var i = 0; i < characters.length; i++) {
+var characters = $("<div>").addClass("battlefield").attr("data-id", i);
 var playersId = $("#gameplayers").find("characters-imageUrl").attr("data-id");
 playersId.removeAttr("id");
 playersId.removeAttr("data-selected");
 playersId.attr("id", "#characters" + playersId);
 $("#battlefield").append(playersId);
 
+}
 
 var enemyplayersId = $("#enemyplayers").find("characters-imageUrl").attr("data-id");
 enemyplayersId.removeAttr("id");
 enemyplayersId.removeAttr("data-selected");
 enemyplayersId.attr("id", "#characters" + enemyplayersId);
-$("#enemyplayer").append(enemyplayersId);
+$("#enemyplayers").append(enemyplayersId);
 
 
 var defendersId = $("defenders").find("characters-imageUrl").attr("data-id");
@@ -79,6 +86,13 @@ $("#defender").append(defendersId);
 
 
 
-}
 
-    
+
+
+
+gameruleOne();
+//console.log(gameruleOne);
+
+
+
+}

@@ -28,7 +28,7 @@ body {
 
   }
   
-  #characters {
+  .characters {
     height: 180px;
     width: 130px;
     display:inline-block;
@@ -73,7 +73,6 @@ body {
     width: 180px;
     text-align: center;
     padding: 30px;
-    display: hidden;
   }
 
   
