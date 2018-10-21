@@ -1,10 +1,6 @@
-//Function to run to invoke document.
 
-// Main Star Wars RPG Game Variables 
     
 
-// Main Star Wars RPG Game Variables 
-//Counts number of wins and looses of players
 
     
 //Star Wars RPG Game characters
@@ -72,7 +68,7 @@
         for (var i = 0; i < characters.length; i++) {
             //create dynamic divs
             var div = $('<div>').addClass("gameplayers").attr("id",i);
-            //append new div to id=characters
+            //append new div to id=characters 
             $("mainbattlefield").append(div);
         //inside the new div append a <p> with the character name
             div.append($("<img>").attr("src", "assets/images/" + character [1]["imgUrl"]));
@@ -106,25 +102,6 @@
         }
         
 		
-
-			
-				
 				
 
-    //All Game Rules/Functions HERE
-
-    //Game Restart Function Generates Gets and Sets the rest of the Game Rules Functions
-    //Game Restart Function also serves as the main game function
-
-
-
-    
-
-    //Functions for Pictures to Move to Enemy Player Div
-    //Battle Functions Here
-    //Functions for Defenders
-    //Attack Functions
-    //Defender Functions
-    //Win-Lose Functions
-            
     

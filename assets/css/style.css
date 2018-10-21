@@ -55,11 +55,11 @@ body {
 
   }
 
-  #gameplayer, #defender {
+  #gameplayer, #enemyplayer, #defender {
     display: hidden;
   }
 
-  #
+  
 
     
 
