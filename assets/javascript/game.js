@@ -47,6 +47,11 @@
     imageUrl: '../images/yoda.png'
 },];
 
+function preGame() {
+    $("mainbattlefield").prepend("#battlefield");
+    
+}
+
 function gameruleOne () {
     attackPower = 0;
     enemyplayersHp = 0;
@@ -59,8 +64,6 @@ function gameruleOne () {
     $("#enemyplayers").empty();
     $("#defender").empty();
 
-for (var i = 0; i < characters.length; i++) {
-var characters = $("<div>").addClass("battlefield").attr("data-id", i);
 var playersId = $("#gameplayers").find("characters-imageUrl").attr("data-id");
 playersId.removeAttr("id");
 playersId.removeAttr("data-selected");
@@ -73,20 +76,14 @@ var enemyplayersId = $("#enemyplayers").find("characters-imageUrl").attr("data-i
 enemyplayersId.removeAttr("id");
 enemyplayersId.removeAttr("data-selected");
 enemyplayersId.attr("id", "#characters" + enemyplayersId);
-$("#enemyplayers").append(enemyplayersId);
+$("#battlefield").append(enemyplayersId);
 
 
 var defendersId = $("defenders").find("characters-imageUrl").attr("data-id");
 defendersId.removeAttr("id");
 defendersId.removeAttr("data-selected");
 defendersId.attr("id", "#characters" + defendersId);
-$("#defender").append(defendersId);
-
-
-
-
-
-
+$("#battlefield").append(defendersId);
 
 
 
@@ -95,4 +92,4 @@ gameruleOne();
 
 
 
-}
+
