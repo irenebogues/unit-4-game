@@ -92,7 +92,7 @@ for (var i = 0; i < starWars.characters.length; i++) {
 $("#char").on("click", function() {
     if (starWars.player === 0) {
         var selectedPlayer = "#char" + $(this).attr("data-id");
-        $("#battlefield").append($(selectedPlayer));
+        $("#gameplayer").append($(selectedPlayer));
         starWars.player++;
         starWars.characters[$(this).attr("data-id")].player = true;
 
