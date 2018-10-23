@@ -1,13 +1,15 @@
-
 // Global Variables
-/* function starWars () {
+$(document).ready(function(){
 
-    */
+var starWars = {
+    countWins: 0,
+    countLose: 0,
 
- 
+
 //Star Wars RPG Game characters
- var characters = [{
+  characters: [{
     //Darth Vader
+    id: "star0",
     name: "Darth Vader",
     health: 200,
     attackPower: 10,
@@ -16,6 +18,7 @@
 },
 
 {   //Darth Maul
+    id: "star02",
     name: "Darth Maul",
     health: 180,
     attackPower: 8,
@@ -24,6 +27,7 @@
 },
 
 {   //Obi Wan
+    id: "star03",
     name: "Obi Wan",
     health: 200,
     attackPower: 11,
@@ -32,6 +36,7 @@
 },
 
 {   //Luke Skywalker
+    id: "star04",
     name: "Luke Skywalker",
     health: 210,
     attackPower: 12,
@@ -40,55 +45,34 @@
 },
 
 {   //Yoda
+    id:"star05",
     name: "Yoda",
     health: 250,
     attackPower: 15,
     counterPower: 20,
-    imageUrl: '../images/yoda.png'
-},];
+    imageUrl: '../images/yoda.png'}
 
-function preGame() {
-    $("mainbattlefield").prepend("#battlefield");
-    
-}
+],};
 
-function gameruleOne () {
-    attackPower = 0;
-    enemyplayersHp = 0;
-    defenderHp = 0;
-    playersId = characters;
-    enemyplayersId = characters;
-    defendersId = characters;
 
-    $("#gameplayers").empty();
-    $("#enemyplayers").empty();
-    $("#defender").empty();
 
-var playersId = $("#gameplayers").find("characters-imageUrl").attr("data-id");
-playersId.removeAttr("id");
-playersId.removeAttr("data-selected");
-playersId.attr("id", "#characters" + playersId);
-$("#battlefield").append(playersId);
+for (var i = 0; i < starWars.characters.length; i++) {
+    var thisChar = "char" + i;
+    var charDiv = $("<div>");
+    charDiv.attr("id", thisChar);
+    charDiv.attr("data-health", starWars.characters[i].health);
+    $("#gameplayers").append(charDiv);
+
+    var charIcon = $("<i>");
+    $("#char" + i).append(charIcon);
+    var charHealth = $("<span>test</span>");
+    charHealth.html("&nbsp;" + $("#char" + i).attr("data-health"));
+    $("#char" + i).append(charHealth);
 
 }
-
-var enemyplayersId = $("#enemyplayers").find("characters-imageUrl").attr("data-id");
-enemyplayersId.removeAttr("id");
-enemyplayersId.removeAttr("data-selected");
-enemyplayersId.attr("id", "#characters" + enemyplayersId);
-$("#battlefield").append(enemyplayersId);
+});
 
 
-var defendersId = $("defenders").find("characters-imageUrl").attr("data-id");
-defendersId.removeAttr("id");
-defendersId.removeAttr("data-selected");
-defendersId.attr("id", "#characters" + defendersId);
-$("#battlefield").append(defendersId);
-
-
-
-gameruleOne();
-//console.log(gameruleOne);
 
 
 

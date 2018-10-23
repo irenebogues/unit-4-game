@@ -28,7 +28,8 @@ body {
     height: 200px;;
   }
   
-  .characters {
+  #char  {
+    background-image: url("../images/starwarslogo.png");
     height: 180px;
     width: 130px;
     display:inline-block;
