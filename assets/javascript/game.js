@@ -61,7 +61,6 @@ for (var i = 0; i < starWars.characters.length; i++) {
     charDiv.addClass("char");
     charDiv.attr("id", thisChar);
     charDiv.attr("data-id", i);
-    charDiv.attr("data-health", i);
     charDiv.attr("data-health", starWars.characters[i].health);
     $("#char").append(charDiv);
 //show Health Points on card
